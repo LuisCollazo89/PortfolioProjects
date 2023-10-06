@@ -1,0 +1,21 @@
+--Looking at the average ride length.
+
+SELECT AVG(CAST(ride_length AS int))  FROM cyclistic_1
+
+--Checking the max and min ride length
+
+SELECT MAX(CAST(ride_length AS int))  FROM cyclistic_1
+
+SELECT MIN(CAST(ride_length AS int))  FROM cyclistic_1
+
+-- Looking at the average ride length for each day of the week.
+
+SELECT day_of_week, AVG(CAST(ride_length AS int))
+FROM cyclistic_1
+GROUP BY day_of_week
+
+-- Comparing  the average ride length from the casual, and the members.
+
+SELECT member_casual, AVG(CAST(ride_length AS int))
+FROM cyclistic_1
+GROUP BY member_casual
